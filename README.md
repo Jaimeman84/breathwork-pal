@@ -21,7 +21,7 @@ A modern, interactive breathwork application built with Python and Streamlit tha
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/breathwork-pal.git
+git clone https://github.com/jaimeman84/breathwork-pal.git
 cd breathwork-pal
 ```
 
