@@ -21,7 +21,7 @@ A modern, interactive breathwork application built with Python and Streamlit tha
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/jaimeman84/breathwork-pal.git
+git clone https://github.com/yourusername/breathwork-pal.git
 cd breathwork-pal
 ```
 
@@ -41,6 +41,7 @@ pip install -r requirements.txt
 breathwork-pal/
 ├── README.md
 ├── requirements.txt
+├── pytest.ini
 ├── src/
 │   ├── __init__.py
 │   ├── app.py
@@ -50,7 +51,9 @@ breathwork-pal/
 │   │   ├── circle_pattern.py
 │   │   ├── wave_pattern.py
 │   │   └── square_pattern.py
-│   └── config.py
+│   └── utils/
+│       ├── __init__.py
+│       └── timer.py
 └── tests/
     ├── __init__.py
     ├── test_patterns.py
@@ -58,10 +61,12 @@ breathwork-pal/
 ```
 
 ## Dependencies
-- streamlit>=1.31.0
-- numpy>=1.24.3
-- plotly>=5.18.0
-- pytest>=7.4.0
+```
+streamlit>=1.31.0
+numpy>=1.24.3
+plotly>=5.18.0
+pytest>=7.4.0
+```
 
 ## Usage
 
@@ -89,16 +94,37 @@ streamlit run src/app.py
 
 ## Development
 
-### Running Tests
+### Testing
+The project uses pytest for testing. To run the tests:
+
 ```bash
-pytest tests/
+# Install test dependencies
+pip install pytest
+
+# Run tests from project root
+pytest
+
+# Run tests with verbosity
+pytest -v
+
+# Run specific test file
+pytest tests/test_timer.py
 ```
+
+### Test Structure
+- `test_timer.py`: Tests for the timer utility
+  - Timer initialization
+  - Start/Stop functionality
+  - Elapsed time calculation
+  - Remaining time calculation
+  - Timer completion status
 
 ### Project Architecture
 - Follows SOLID principles
 - Uses abstract base class for patterns
 - Implements clean architecture with separation of concerns
 - Includes comprehensive unit tests
+- Proper Python package structure with `__init__.py` files
 
 ## Contributing
 
@@ -107,6 +133,12 @@ pytest tests/
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+### Development Guidelines
+- Add appropriate tests for new features
+- Ensure all tests pass before submitting PR
+- Follow existing code style and patterns
+- Update documentation as needed
 
 ## Safety Note
 
